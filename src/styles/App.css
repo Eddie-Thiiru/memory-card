@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-size: 1rem;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+#root,
+.App {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 80px 1fr 50px;
+}
+
+.mainSection {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+}
