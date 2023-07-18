@@ -10,4 +10,9 @@
 img {
   height: 230px;
   width: 180px;
+  pointer-events: none;
+}
+
+.card p {
+  pointer-events: none;
 }

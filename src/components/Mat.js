@@ -1,9 +1,11 @@
 import React from "react";
 import Img from "../images/mat.png";
 
-const Mat = () => {
+const Mat = (props) => {
+  const { cardClicked } = props;
+
   return (
-    <div className="matCard card">
+    <div className="card" id="mat" onClick={cardClicked}>
       <img src={Img} alt="Mat Cauthon" />
       <p>Mat Cauthon</p>
     </div>

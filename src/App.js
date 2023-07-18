@@ -15,16 +15,52 @@ import "./styles/Cards.css";
 const App = () => {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const [dalinar, setDalinar] = useState({ hit: false });
-  const [jorg, setJorg] = useState({ hit: false });
-  const [kaladin, setKaladin] = useState({ hit: false });
-  const [kelsier, setKelsier] = useState({ hit: false });
-  const [kvothe, setKvothe] = useState({ hit: false });
-  const [logen, setLogen] = useState({ hit: false });
-  const [mat, setMat] = useState({ hit: false });
-  const [rand, setRand] = useState({ hit: false });
-  const [geralt, setGeralt] = useState({ hit: false });
-  const [vin, setVin] = useState({ hit: false });
+  const [hitStatus, setHitStatus] = useState([
+    { name: "dalinar", hit: false },
+    { name: "jorg", hit: false },
+    { name: "kaladin", hit: false },
+    { name: "kelsier", hit: false },
+    { name: "kvothe", hit: false },
+    { name: "logen", hit: false },
+    { name: "mat", hit: false },
+    { name: "rand", hit: false },
+    { name: "geralt", hit: false },
+    { name: "vin", hit: false },
+  ]);
+
+  const handleClicks = (e) => {
+    const characterName = e.target.id;
+    let gameOver = false;
+
+    setHitStatus(
+      hitStatus.map((item) => {
+        if (item.name === characterName) {
+          if (item.hit === false) {
+            setScore(score + 1);
+            return { ...item, hit: true };
+          } else {
+            gameOver = true;
+          }
+        } else {
+          return item;
+        }
+      })
+    );
+
+    if (gameOver === true) {
+      let value = bestScore > score ? bestScore : score;
+
+      setScore(0);
+      setBestScore(value);
+      setHitStatus(
+        hitStatus.map((item) => {
+          return { ...item, hit: false };
+        })
+      );
+
+      gameOver = false;
+    }
+  };
 
   return (
     <div className="App">
@@ -37,16 +73,16 @@ const App = () => {
           <div>Best Score: {bestScore}</div>
         </div>
         <div className="playGround">
-          <Dalinar />
-          <Jorg />
-          <Kaladin />
-          <Kelsier />
-          <Kvothe />
-          <Logen />
-          <Mat />
-          <Rand />
-          <Geralt />
-          <Vin />
+          <Dalinar cardClicked={handleClicks} />
+          <Jorg cardClicked={handleClicks} />
+          <Kaladin cardClicked={handleClicks} />
+          <Kelsier cardClicked={handleClicks} />
+          <Kvothe cardClicked={handleClicks} />
+          <Logen cardClicked={handleClicks} />
+          <Mat cardClicked={handleClicks} />
+          <Rand cardClicked={handleClicks} />
+          <Geralt cardClicked={handleClicks} />
+          <Vin cardClicked={handleClicks} />
         </div>
       </div>
     </div>

@@ -1,9 +1,11 @@
 import React from "react";
 import Img from "../images/rand.png";
 
-const Rand = () => {
+const Rand = (props) => {
+  const { cardClicked } = props;
+
   return (
-    <div className="randCard card">
+    <div className="card" id="rand" onClick={cardClicked}>
       <img src={Img} alt="Rand al'Thor" />
       <p>Rand al'Thor</p>
     </div>
