@@ -17,6 +17,7 @@ body {
 }
 
 .App {
+  background-image: url(../images/background.png);
   padding: 10px;
   display: grid;
   grid-template-rows: 100px 1fr 30px;
