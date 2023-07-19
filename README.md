@@ -1,5 +1,7 @@
 # memory-card-game
 
+From The Odin Project's curriculum. The goal of this project was to build a memory card game using React.
+
 Credits for the images in this page go to:
 
 - [The Wheel of Time Wiki](https://wot.fandom.com/wiki/Mat_Cauthon)
