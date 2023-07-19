@@ -121,13 +121,19 @@ const App = () => {
   return (
     <div className="App">
       <div className="header">
-        <h1>Hello</h1>
+        <div className="title">
+          <p>
+            FantasyHeroes
+            <br /> <span>Memory Game</span>
+          </p>
+        </div>
+        <div className="scoreBoard">
+          <p>
+            Score: {score} | Best Score: {bestScore}
+          </p>
+        </div>
       </div>
       <div className="mainSection">
-        <div className="scoreBoard">
-          <div>Current Score: {score}</div>
-          <div>Best Score: {bestScore}</div>
-        </div>
         <div className="playGround">
           {components.map((item) => {
             let Component = item;
@@ -136,6 +142,7 @@ const App = () => {
           })}
         </div>
       </div>
+      <div className="footer">copyright @ FantasyHeroes</div>
     </div>
   );
 };

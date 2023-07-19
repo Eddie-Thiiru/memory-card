@@ -19,12 +19,14 @@ body {
 .App {
   padding: 10px;
   display: grid;
-  grid-template-rows: 80px 1fr;
+  grid-template-rows: 100px 1fr 30px;
+  text-align: center;
 }
-
-.mainSection {
+.header {
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
 }
 
 .scoreBoard {
@@ -34,11 +36,30 @@ body {
   gap: 20px;
 }
 
-.playGround {
+.mainSection {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr 1fr;
-  justify-items: center;
+  grid-template-columns: minmax(600px, 1100px);
+  justify-content: center;
   align-items: center;
-  gap: 10px;
+}
+
+.playGround {
+  height: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 170px));
+  grid-auto-rows: 250px;
+  justify-content: center;
+  align-content: center;
+  gap: 35px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  padding: 5px;
 }
