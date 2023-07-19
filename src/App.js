@@ -129,7 +129,7 @@ const App = () => {
         </div>
         <div className="scoreBoard">
           <p>
-            Score: {score} | Best Score: {bestScore}
+            Score: <span>{score}</span> | Best Score: <span>{bestScore}</span>
           </p>
         </div>
       </div>
