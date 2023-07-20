@@ -9,7 +9,7 @@ import Mat from "./components/Mat";
 import Rand from "./components/Rand";
 import Vin from "./components/Vin";
 import Geralt from "./components/Geralt";
-import uniqid from "uniqid";
+import { v4 as uuidv4 } from "uuid";
 import "./styles/App.css";
 import "./styles/Cards.css";
 
@@ -137,7 +137,7 @@ const App = () => {
         <div className="playGround">
           {components.map((item) => {
             let Component = item;
-            let id = uniqid();
+            let id = uuidv4();
             return <Component key={id} cardClicked={handleClicks} />;
           })}
         </div>
